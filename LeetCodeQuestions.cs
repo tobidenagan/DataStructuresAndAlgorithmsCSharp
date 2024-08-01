@@ -17,6 +17,18 @@
         }
         public static int[] TwoSum(int[] nums, int target)
         {
+            Dictionary<int, int> numAndIndex = new Dictionary<int, int>();
+            for (int i = 0; i < nums.Length; i++ ) 
+            {
+                int complement = target - nums[i];
+                if (numAndIndex.ContainsKey(complement))
+                    return [numAndIndex[complement], i];
+                numAndIndex[nums[i]] = i;
+            }
+            return [];
+        }
+        public static int[] TwoSum2(int[] nums, int target)
+        {
             int numberOfLoops = nums.Length * nums.Length;
             int[] result = new int[2];
             int x = 0;
