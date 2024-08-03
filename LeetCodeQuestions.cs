@@ -51,5 +51,25 @@
             }
             return result;
         }
+        public static int LengthOfLongestSubstring(string s)
+        {
+            int n = s.Length;
+            int maxLength = 0;
+            Dictionary<char, int> charIndexMap = new Dictionary<char, int>();
+            int start = 0;
+            for (int end = 0; end < n; end++)
+            {
+                if (charIndexMap.ContainsKey(s[end]))
+                {
+                    // Move the start to the next position of the last occurrence of s[end]
+                    start = Math.Max(charIndexMap[s[end]] + 1, start);
+                }
+                // Update the last occurrence of s[end]
+                charIndexMap[s[end]] = end;
+                // Calculate the length of the current substring
+                maxLength = Math.Max(maxLength, end - start + 1);
+            }
+            return maxLength;
+        }
     }
 }
