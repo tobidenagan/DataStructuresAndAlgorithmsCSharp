@@ -71,5 +71,16 @@
             }
             return maxLength;
         }
+        public static bool CanBeEqual(int[] target, int[] arr)
+        {
+            if (target.Length != arr.Length) return false;
+            Array.Sort(target);
+            Array.Sort(arr);
+            for (int i = 0; i < target.Length; i++)
+            {
+                if (target[i] != arr[i]) return false;
+            }
+            return true;
+        }
     }
 }

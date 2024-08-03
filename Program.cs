@@ -13,6 +13,7 @@
             Console.WriteLine(LeetCodeQuestions.LengthOfLongestSubstring("pwwkew")); //3          
             Console.WriteLine(LeetCodeQuestions.LengthOfLongestSubstring("aab"));  //2         
             Console.WriteLine(LeetCodeQuestions.LengthOfLongestSubstring("abba"));  //2         
+            Console.WriteLine(LeetCodeQuestions.CanBeEqual([1, 2, 3, 4], [2, 4, 1, 3]));  //true         
         }
         private static void PrintArray<T>(T[] arr)
         {
